@@ -1,0 +1,15 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: springboot-demo-monitor
+  namespace: demo-keda
+  labels:
+    release: prometheus
+spec:
+  selector:
+    matchLabels:
+      app: springboot-demo
+  endpoints:
+    - port: http
+      path: /actuator/prometheus
+      interval: 15s
