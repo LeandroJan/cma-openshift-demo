@@ -5,7 +5,7 @@ FROM registry.access.redhat.com/ubi8/openjdk-17:latest
 WORKDIR /app
 
 # Copia o jar do aplicativo para dentro do container
-COPY build-artifacts/demo-0.0.1-SNAPSHOT.jar /app/demo.jar
+COPY demo-app/build-artifacts/demo-0.0.1-SNAPSHOT.jar /app/demo.jar
 
 # Exponhe a porta 8080
 EXPOSE 8080
