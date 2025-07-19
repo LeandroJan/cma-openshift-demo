@@ -1,15 +1,18 @@
 apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
 metadata:
-  name: springboot-demo-monitor
-  namespace: demo-keda
+  name: cma-openshift-demo-servicemonitor
+  namespace: cma
   labels:
-    release: prometheus
+    release: prometheus  # must match your Prometheus Operator label
 spec:
   selector:
     matchLabels:
-      app: springboot-demo
+      app: cma-openshift-demo
+  namespaceSelector:
+    matchNames:
+      - cma
   endpoints:
-    - port: http
+    - port: 8080-tcp
       path: /actuator/prometheus
       interval: 15s

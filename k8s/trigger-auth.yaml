@@ -1,0 +1,13 @@
+apiVersion: keda.sh/v1alpha1
+kind: TriggerAuthentication
+metadata:
+  name: cma-prom-trigger-auth
+  namespace: cma
+spec:
+  secretTargetRef:
+    - parameter: bearerToken
+      name: cma-prom-sa-token
+      key: token
+    - parameter: ca
+      name: cma-prom-sa-token
+      key: ca.crt
