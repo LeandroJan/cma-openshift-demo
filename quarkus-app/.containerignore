@@ -1,0 +1,28 @@
+# Ignore source files since we're copying pre-built JAR
+src/
+.mvn/
+mvnw
+mvnw.cmd
+pom.xml
+
+# Ignore target files except quarkus-app
+target/*
+!target/quarkus-app/
+
+# Ignore development files
+.git/
+.gitignore
+README.md
+*.md
+
+# Ignore IDE files
+.vscode/
+.idea/
+*.iml
+
+# Ignore test files
+test-api.sh
+
+# Ignore other build artifacts
+*.log
+.DS_Store
